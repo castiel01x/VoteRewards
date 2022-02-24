@@ -1,0 +1,31 @@
+votes:
+  broadcast-votes: true
+  broadcast-message: "&a%player% has just voted and gained 1 Vote key! vote using /vote"
+
+  vote-rewards:
+    enabled: true
+    commands:
+      - "crates give vote %player%"
+
+  vote-reminder: # sends a message to the player when they login if they haven't voted in the past 24 hours
+    enabled: true
+    delay: 5 # wait 5 seconds after the player joins the server before sending the message
+    message:
+      - "&7&m-----------------"
+      - "&aDon't forget to vote"
+      - "&aFor awesome rewards!"
+      - "&7&m-----------------"
+
+vote-party:
+  enabled: true
+  broadcast-voteparty: true
+  broadcast-message: "&dVote party is starting in 30 seconds! empty your inventory."
+  broadcast-end-message: "&dVote Party is over."
+  delay: 10 # delay before executing commands
+  votes-required: 50 # votes required to start the vote party
+  commands:
+    - "crates giveall rare"
+
+vote-shop:
+  enabled: true
+  points-per-vote: 1

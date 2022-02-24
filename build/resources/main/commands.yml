@@ -1,0 +1,29 @@
+config-version: 1.0
+
+voteBalanceCommand:  #Displays how many points the player has
+  enabled: true
+  aliases:  #Main vote balance commands (e.g /votebalance (default command), /point, /points)
+    - "point"
+    - "points"
+  sub-commands:  #Sub vote shop commands (e.g /vote bal, /vote balance, /vote point, /vote points)
+    - "bal"
+    - "balance"
+    - "point"
+    - "points"
+
+voteShopCommand:  #Opens the vote shop GUI
+  enabled: true
+  aliases:  #Main vote shop commands (e.g /voteshop (default command), /votesshop)
+    - "votesshop"
+  sub-commands:  #Sub vote shop commands (e.g /vote shop, /vote points, /vote rewards)
+    - "shop"
+    - "points"
+    - "rewards"
+
+votePartyCommand:  #Displays how many votes left till vote party
+  enabled: true
+  aliases:  #Main vote shop commands (e.g /voteparty (default command), /votesparty, /vp)
+    - "votesparty"
+    - "vp"
+  sub-commands:  #Sub vote shop commands (e.g /vote party)
+    - "party"

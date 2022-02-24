@@ -1,0 +1,10 @@
+name: VoteRewards
+version: 1.0
+author: castiel
+main: me.castiel.voterewards.VoteRewards
+depend: [Votifier]
+api-version: 1.13
+commands:
+  vote:
+    aliases: [votes, voting]
+    usage: <command>

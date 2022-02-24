@@ -1,0 +1,56 @@
+
+size: 36
+title: "&7Vote Shop"
+
+rewards:
+  fill-Background:
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  'info':
+    slot: 35
+    material: "BOOK"
+    name: "&aVote Shop"
+    lore:
+      - "&fYou can obtain points by voting"
+      - "&fuse /vote to view the vote links"
+    glowing: false
+    amount: 1
+  '1':
+    slot: 10
+    material: "DIAMOND_BLOCK"
+    name: "&bx64 Diamond Blocks"
+    lore:
+      - "&fPrice: &a%price% &ePoints."
+      - " "
+      - "&fClick to purchase!"
+    glowing: true
+    amount: 64
+    price: 3
+    commands:
+      - "give %player% diamond_block 64"
+  '2':
+    slot: 11
+    material: "EMERALD_BLOCK"
+    name: "&ax64 Emerald Blocks"
+    lore:
+      - "&fPrice: &a%price% &ePoints."
+      - " "
+      - "&fClick to purchase!"
+    glowing: true
+    amount: 64
+    price: 5
+    commands:
+      - "give %player% emerald_block 64"
+  '3':
+    slot: 12
+    material: "FEATHER"
+    name: "&a12 hours /fly"
+    lore:
+      - "&fPrice: &a%price% &ePoints."
+      - " "
+      - "&fClick to purchase!"
+    glowing: true
+    amount: 1
+    price: 20
+    commands:
+      - "voucher give %player% island_fly"

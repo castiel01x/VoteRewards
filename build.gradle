@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+group 'me.castiel'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://jitpack.io'
+    }
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.spigotmc'
+        }
+    }
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:22.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    compileOnly 'com.github.NuVotifier:NuVotifier:2.7.2'
+    compileOnly 'org.spigotmc:spigot-api:1.18-R0.1-SNAPSHOT'
+}
+
+test {
+    useJUnitPlatform()
+}

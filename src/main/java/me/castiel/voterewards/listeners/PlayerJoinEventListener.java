@@ -24,7 +24,7 @@ public class PlayerJoinEventListener implements Listener {
         FileConfiguration db = dbManager.getConfig(player.getUniqueId().toString()).getConfig();
         FileConfiguration mainCFG = plugin.getConfig();
         if (mainCFG.getBoolean("votes.vote-reminder.enabled", false)) {
-            if (db.getLong("last-vote") > System.currentTimeMillis() - 86400000L) return;
+            if (db.getLong("last-vote", 0L) > System.currentTimeMillis() - 86400000L) return;
             new BukkitRunnable() {
                 @Override
                 public void run() {

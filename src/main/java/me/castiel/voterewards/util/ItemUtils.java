@@ -1,5 +1,7 @@
 package me.castiel.voterewards.util;
 
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -27,6 +29,14 @@ public class ItemUtils {
 
     public static ItemStack setamount(ItemStack item, Integer amount) {
         item.setAmount(amount);
+        return item;
+    }
+
+    public static ItemStack setGlowingTrue(ItemStack item) {
+        item.addEnchantment(Enchantment.DURABILITY, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
         return item;
     }
 }

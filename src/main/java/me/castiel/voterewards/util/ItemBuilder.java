@@ -23,4 +23,10 @@ public class ItemBuilder extends ItemStack {
         ItemUtils.setamount(this, amount);
         return this;
     }
+
+    public ItemBuilder setGlowing(boolean glow) {
+        if (glow)
+            ItemUtils.setGlowingTrue(this);
+        return this;
+    }
 }

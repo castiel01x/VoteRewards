@@ -36,7 +36,8 @@ public class Shop {
             lore.replaceAll(s -> s.replace("%price%", String.valueOf(price)));
             opt.ifPresent(mat -> inv.addButton(inventoryCFG.getInt("rewards." + key + ".slot"), ItemButton.create(new ItemBuilder(mat.parseMaterial())
                     .setName(inventoryCFG.getString("rewards." + key + ".name", " ").replace('&', ChatColor.COLOR_CHAR))
-                    .setAmount_(inventoryCFG.getInt("rewards." + key + ".amount", 0))
+                    .setAmount_(inventoryCFG.getInt("rewards." + key + ".amount", 1))
+                    .setGlowing(inventoryCFG.getBoolean("rewards." + key + ".glowing", false))
                     .addLore(lore), event -> {
                 if (price <= -1) return;
                 Player player = (Player) event.getWhoClicked();
@@ -47,7 +48,7 @@ public class Shop {
                 if (price <= balance) {
                     db.set("balance", balance - price);
                     ConsoleCommandSender sender = plugin.getServer().getConsoleSender();
-                    for (String command : inventoryCFG.getStringList("rewards." + key + ".commands")){
+                    for (String command : inventoryCFG.getStringList("rewards." + key + ".commands")) {
                         Bukkit.dispatchCommand(sender, command.replace("%player%", player.getName()));
                     }
                     String message = plugin.getMessages().playerPurchasedItem.replace("%item-name%", title).replace("%item-price%", String.valueOf(price));
